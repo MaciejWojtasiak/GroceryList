@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Lista zakupów</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="dist/style.css" />
+  </head>
+
+  <body>
+    <div class="container">     
+      <h1 class="text-center mb-4">Lista zakupów</h1>   
+    <form>
+      <!-- column grid layout with text inputs for the first and last names -->
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <input type="text" id="product" class="form-control" required/>
+            <label class="form-label" for="product">Produkt</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <input type="number" id="value" class="form-control" min="0" step="any" required/>
+            <label class="form-label" for="value">Wartość</label>
+          </div>
+        </div>          
+        <div class="col">
+          <div class="form-check form-check-inline btn-group">
+            <input class="form-check-input radioBtn" type="radio" name="inlineRadioOptions" id="kilograms" value="Kg" required>Kg</input>
+            <input class="form-check-input radioBtn ms-1" type="radio" name="inlineRadioOptions" id="amount" value="Sztuki" required>Sztuki</input>
+          </div>
+         
+        </div>
+        <div class="col">          
+            <select class="form-select" id="category" aria-invalid="false" required> 
+              <option value="" selected="true" disabled="disabled">Kategoria</option>
+              <option value="Warzywa" >Warzywa</option>
+              <option value="Owoce">Owoce</option>
+              <option value="Nabiał">Nabiał</option>
+              <option value="Pieczywo">Pieczywo</option>
+              <option value="Artykuły higieniczne">Artykuły higieniczne</option>
+              <option value="Przyprawy">Przyprawy</option>
+              <option value="Mięso/Wędliny">Mięso/Wędliny</option>
+              <option value="Napoje">Napoje</option>
+            </select>          
+        </div>
+      </div>               
+      <!-- Add button -->
+      <button id="add" type="submit" class="btn btn-primary btn-block mb-4">Dodaj produkt</button>
+    </form>
+    <button class="btn btn-secondary mb-2" onclick="window.print()">Wydrukuj listę</button>
+    <div class="list">      
+    </div>
+      
+     
+    
+  <!-- End your project here-->
+
+    <script src="dist/main.bundle.js"></script>
+  </body>
+</html>
