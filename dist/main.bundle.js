@@ -107,7 +107,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var addButton = document.getElementById('add');
 var list = document.querySelector('.list');
-var productsArray = JSON.parse(sessionStorage.Products);
+var productsArray = sessionStorage.Products;
 var totalKg = 0;
 var totalAmount = 0;
 

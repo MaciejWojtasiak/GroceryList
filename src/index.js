@@ -1,6 +1,6 @@
 const addButton = document.getElementById('add');
 let list = document.querySelector('.list');
-const productsArray = JSON.parse(sessionStorage.Products);
+const productsArray = sessionStorage.Products;
 let totalKg = 0;
 let totalAmount = 0;
 
