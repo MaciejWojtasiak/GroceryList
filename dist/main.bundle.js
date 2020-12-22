@@ -107,7 +107,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var addButton = document.getElementById('add');
 var list = document.querySelector('.list');
-var productsArray = JSON.parse(localStorage.Products);
+var productsArray = JSON.parse(sessionStorage.Products);
 var totalKg = 0;
 var totalAmount = 0;
 
@@ -163,7 +163,7 @@ function addProduct() {
     unit: unit,
     category: category
   });
-  localStorage.setItem("Products", JSON.stringify(productsArray));
+  sessionStorage.setItem("Products", JSON.stringify(productsArray));
   form.reset();
 }
 
@@ -171,7 +171,7 @@ function deleteProduct(element) {
   productsArray.forEach(function (product, index) {
     if (product.name === element.parentElement.parentElement.id) {
       productsArray.splice(index, 1);
-      localStorage.setItem("Products", JSON.stringify(productsArray));
+      sessionStorage.setItem("Products", JSON.stringify(productsArray));
     }
   });
   handleUI();
