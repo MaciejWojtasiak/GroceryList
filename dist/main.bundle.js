@@ -203,9 +203,10 @@ list.addEventListener('click', function (e) {
   } else {
     return;
   }
-}); // window.addEventListener("DOMContentLoaded", () => {
-//   displayProducts(productsArray);
-// })
+});
+window.addEventListener("DOMContentLoaded", function () {
+  displayProducts(productsArray);
+});
 
 function handleUI() {
   clearUI();

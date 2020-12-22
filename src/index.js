@@ -115,9 +115,9 @@ list.addEventListener('click', (e) => {
   }
 });
 
-// window.addEventListener("DOMContentLoaded", () => {
-//   displayProducts(productsArray);
-// })
+window.addEventListener("DOMContentLoaded", () => {
+  displayProducts(productsArray);
+})
 
 
 function handleUI() {
