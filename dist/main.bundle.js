@@ -108,7 +108,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var addButton = document.getElementById('add');
 var productsArray;
 
-if (localStorage.getItem("Products") === undefined) {
+if (localStorage.getItem("Products") === null) {
   productsArray = [];
 } else {
   productsArray = JSON.parse(localStorage.Products);

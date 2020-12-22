@@ -1,7 +1,7 @@
 const addButton = document.getElementById('add');
 let productsArray;
-if (localStorage.getItem("Products") === undefined) {
-  productsArray = []
+if (localStorage.getItem("Products") === null) {
+  productsArray = [];
 } else {
   productsArray = JSON.parse(localStorage.Products);
 }
