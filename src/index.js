@@ -1,8 +1,9 @@
 const addButton = document.getElementById('add');
+const productsArray = JSON.parse(localStorage.Products);
 let list = document.querySelector('.list');
-const productsArray = sessionStorage.Products;
 let totalKg = 0;
 let totalAmount = 0;
+
 
 function displayProducts(products) {
   const sortedByCategory = products.reduce(function (obj, v, i) {
@@ -68,7 +69,7 @@ function addProduct() {
   const category = document.getElementById('category').value;
 
   productsArray.push({ name, value, unit, category });
-  sessionStorage.setItem("Products", JSON.stringify(productsArray));
+  localStorage.setItem("Products", JSON.stringify(productsArray));
   form.reset();
 }
 
@@ -76,7 +77,7 @@ function deleteProduct(element) {
   productsArray.forEach((product, index) => {
     if (product.name === element.parentElement.parentElement.id) {
       productsArray.splice(index, 1);
-      sessionStorage.setItem("Products", JSON.stringify(productsArray));
+      localStorage.setItem("Products", JSON.stringify(productsArray));
     }
   });
   handleUI();
@@ -114,9 +115,9 @@ list.addEventListener('click', (e) => {
   }
 });
 
-window.addEventListener("DOMContentLoaded", () => {
-  displayProducts(productsArray);
-})
+// window.addEventListener("DOMContentLoaded", () => {
+//   displayProducts(productsArray);
+// })
 
 
 function handleUI() {
