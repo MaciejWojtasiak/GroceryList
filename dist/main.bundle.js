@@ -106,8 +106,8 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var addButton = document.getElementById('add');
+var productsArray = JSON.parse(localStorage.Products);
 var list = document.querySelector('.list');
-var productsArray = sessionStorage.Products;
 var totalKg = 0;
 var totalAmount = 0;
 
@@ -163,7 +163,7 @@ function addProduct() {
     unit: unit,
     category: category
   });
-  sessionStorage.setItem("Products", JSON.stringify(productsArray));
+  localStorage.setItem("Products", JSON.stringify(productsArray));
   form.reset();
 }
 
@@ -171,7 +171,7 @@ function deleteProduct(element) {
   productsArray.forEach(function (product, index) {
     if (product.name === element.parentElement.parentElement.id) {
       productsArray.splice(index, 1);
-      sessionStorage.setItem("Products", JSON.stringify(productsArray));
+      localStorage.setItem("Products", JSON.stringify(productsArray));
     }
   });
   handleUI();
@@ -203,10 +203,9 @@ list.addEventListener('click', function (e) {
   } else {
     return;
   }
-});
-window.addEventListener("DOMContentLoaded", function () {
-  displayProducts(productsArray);
-});
+}); // window.addEventListener("DOMContentLoaded", () => {
+//   displayProducts(productsArray);
+// })
 
 function handleUI() {
   clearUI();
