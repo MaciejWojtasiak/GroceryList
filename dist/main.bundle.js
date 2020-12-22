@@ -106,7 +106,14 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var addButton = document.getElementById('add');
-var productsArray = JSON.parse(localStorage.Products);
+var productsArray;
+
+if (localStorage.getItem("Products") === null) {
+  productsArray = [];
+} else {
+  productsArray = JSON.parse(localStorage.Products);
+}
+
 var list = document.querySelector('.list');
 var totalKg = 0;
 var totalAmount = 0;

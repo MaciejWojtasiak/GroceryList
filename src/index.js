@@ -1,5 +1,10 @@
 const addButton = document.getElementById('add');
-const productsArray = JSON.parse(localStorage.Products);
+let productsArray;
+if (localStorage.getItem("Products") === null) {
+  productsArray = []
+} else {
+  productsArray = JSON.parse(localStorage.Products);
+}
 let list = document.querySelector('.list');
 let totalKg = 0;
 let totalAmount = 0;
